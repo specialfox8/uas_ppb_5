@@ -1,9 +1,22 @@
 import 'package:uas_ppb_5/providers/auth_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:carousel_slider/carousel_slider.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
+
+  String getGreeting() {
+    var hour = DateTime.now().hour;
+
+    if (hour < 12) {
+      return 'Selamat pagi!';
+    } else if (hour < 18) {
+      return 'Selamat siang!';
+    } else {
+      return 'Selamat malam!';
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -11,16 +24,22 @@ class HomeScreen extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Column(
+        title: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text('Selamat Siang,'),
             Text(
-              'Peter N',
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-              ),
+              getGreeting(),
+              style: TextStyle(fontSize: 24),
             ),
+            Container(
+              child: Text('${user?.email}'),
+            ),
+            // Text(
+            //   'Peter N',
+            //   style: TextStyle(
+            //     fontWeight: FontWeight.bold,
+            //   ),
+            // ),
           ],
         ),
         actions: [
@@ -114,7 +133,37 @@ class HomeScreen extends StatelessWidget {
                       ),
 
                       const SizedBox(height: 16),
-                      //image
+                      //image slider
+                      CarouselSlider(
+                        options: CarouselOptions(height: 200),
+                        items: [1, 2, 3, 4, 5].map((i) {
+                          return Builder(
+                            builder: (BuildContext context) {
+                              return Container(
+                                width: MediaQuery.of(context).size.width,
+                                margin: EdgeInsets.symmetric(horizontal: 2),
+                                decoration: BoxDecoration(color: Colors.white),
+                                child: Stack(
+                                  alignment: Alignment.center,
+                                  children: [
+                                    Image.asset('assets/images/1.jpg',
+                                        fit: BoxFit.cover),
+                                    Image.asset('assets/images/2.jpg',
+                                        fit: BoxFit.cover),
+                                    // menambahkan teks
+                                    // Text(
+                                    //   'Text $i',
+                                    //   style: TextStyle(
+                                    //       fontSize: 16.0, color: Colors.white),
+                                    // ),
+                                  ],
+                                ),
+                              );
+                            },
+                          );
+                        }).toList(),
+                      ),
+
                       const SizedBox(height: 16),
                       Row(
                         children: [
@@ -159,6 +208,7 @@ class HomeScreen extends StatelessWidget {
                         ],
                       ),
                       const SizedBox(height: 16),
+                      //image slider
 
                       const Text('Customer Service'),
                       const SizedBox(height: 16),
