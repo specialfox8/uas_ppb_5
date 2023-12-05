@@ -1,4 +1,5 @@
 import 'package:uas_ppb_5/providers/auth_provider.dart' as auth;
+import 'package:uas_ppb_5/screens/NavHome.dart';
 import 'package:uas_ppb_5/screens/login_screen.dart';
 import 'package:uas_ppb_5/screens/homescreen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -54,7 +55,7 @@ class AuthGuard extends StatelessWidget {
       stream: FirebaseAuth.instance.authStateChanges(),
       builder: (context, snapshot) {
         if (snapshot.hasData) {
-          return const HomeScreen();
+          return const MyNavBarScreen();
         } else {
           return const LoginScreen();
         }

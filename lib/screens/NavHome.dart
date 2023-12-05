@@ -1,77 +1,59 @@
+import 'package:uas_ppb_5/providers/auth_provider.dart';
+import 'package:uas_ppb_5/screens/historyscreen.dart';
+import 'package:uas_ppb_5/screens/homescreen.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
-class NavHome extends StatefulWidget {
-  const NavHome({super.key});
+class MyNavBarScreen extends StatefulWidget {
+  const MyNavBarScreen({super.key});
 
   @override
-  State<NavHome> createState() => _NavHomeState();
+  State<MyNavBarScreen> createState() => _MyNavBarScreenState();
 }
 
-class _NavHomeState extends State<NavHome> {
-  int _currentIndex = 0;
-  final List<Widget> _pages = [
-    // Widget untuk halaman pertama
-    Container(
-      color: Colors.blue,
-      child: Center(
-        child: Text('Halaman 1'),
-      ),
-    ),
-    // Widget untuk halaman kedua
-    Container(
-      color: Colors.green,
-      child: Center(
-        child: Text('Halaman 2'),
-      ),
-    ),
-    // Widget untuk halaman ketiga
-    Container(
-      color: Colors.yellow,
-      child: Center(
-        child: Text('Halaman 3'),
-      ),
-    ),
-    // Widget untuk halaman keempat
-    Container(
-      color: Colors.red,
-      child: Center(
-        child: Text('Halaman 4'),
-      ),
-    ),
+class _MyNavBarScreenState extends State<MyNavBarScreen> {
+  int _selectedIndex = 0;
+  static const List<Widget> _widgetOptions = <Widget>[
+    HomeScreen(), //Homescreen
+    HomeScreen(), //VoucherScreen
+    HistoryScreen(), //HistoryScreen
+    HistoryScreen(), //ProfilScreen
   ];
+
+  void _onItemTap(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Navigasi Bar'),
-      ),
-      body: _pages[_currentIndex],
       bottomNavigationBar: BottomNavigationBar(
-        currentIndex: _currentIndex,
-        onTap: (index) {
-          setState(() {
-            _currentIndex = index;
-          });
-        },
-        items: [
+        backgroundColor: Color.fromARGB(95, 43, 108, 81),
+        items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'home',
+            icon: Icon(Icons.home_outlined),
+            label: 'Home',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.search),
-            label: 'Voucher',
+              icon: Icon(Icons.discount_outlined), label: 'Voucher'),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.list_alt_rounded),
+            label: 'History',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.favorite),
-            label: 'Favorit',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.person),
-            label: 'Profil',
+            icon: Icon(Icons.person_outline),
+            label: 'Profile',
           ),
         ],
+        currentIndex: _selectedIndex,
+        selectedItemColor: Colors.white,
+        onTap: _onItemTap,
+        type: BottomNavigationBarType.fixed,
+      ),
+      body: Center(
+        child: _widgetOptions.elementAt(_selectedIndex),
       ),
     );
   }
