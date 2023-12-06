@@ -30,16 +30,20 @@ class _MyNavBarScreenState extends State<MyNavBarScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: Color.fromARGB(95, 43, 108, 81),
+        backgroundColor: const Color.fromRGBO(167, 211, 151, 1.000),
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.home_outlined),
             label: 'Home',
           ),
           BottomNavigationBarItem(
-              icon: Icon(Icons.discount_outlined), label: 'Voucher'),
+            icon: Icon(Icons.confirmation_num),
+            // icon: Image.asset('assets/images/icons/LogoVoucher.png',
+            //     width: 24, height: 24),
+            label: 'Voucher',
+          ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.list_alt_rounded),
+            icon: Icon(Icons.history),
             label: 'History',
           ),
           BottomNavigationBarItem(
