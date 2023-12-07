@@ -1,7 +1,7 @@
 import 'package:uas_ppb_5/providers/auth_provider.dart' as auth;
 import 'package:uas_ppb_5/screens/NavHome.dart';
 import 'package:uas_ppb_5/screens/login_screen.dart';
-import 'package:uas_ppb_5/screens/homescreen.dart';
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';

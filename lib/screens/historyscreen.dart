@@ -5,6 +5,10 @@ class HistoryScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Text('zzzzz');
+    return const Scaffold(
+      body: Center(
+        child: Text('zzzzzz'),
+      ),
+    );
   }
 }

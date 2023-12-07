@@ -4,6 +4,8 @@ import 'package:provider/provider.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'dart:async';
 
+import 'package:uas_ppb_5/screens/historyscreen.dart';
+
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
@@ -89,7 +91,7 @@ class HomeScreen extends StatelessWidget {
                 [
                   Column(
                     children: [
-                      Card(
+                      const Card(
                         child: Column(
                           children: [
                             AspectRatio(
@@ -100,18 +102,18 @@ class HomeScreen extends StatelessWidget {
                                     child: Stack(
                                       children: [
                                         ClipRRect(
-                                          borderRadius: const BorderRadius.only(
+                                          borderRadius: BorderRadius.only(
                                             topLeft: Radius.circular(8.0),
                                             topRight: Radius.circular(8.0),
                                             bottomLeft: Radius.circular(8.0),
                                             bottomRight: Radius.circular(8.0),
                                           ),
-                                          child: Image.asset(
-                                            'assets/images/1.jpg',
-                                            fit: BoxFit.cover,
-                                            height: double.infinity,
-                                            width: double.infinity,
-                                          ),
+                                          // child: Image.asset(
+                                          //   'assets/images/1.jpg',
+                                          //   fit: BoxFit.cover,
+                                          //   height: double.infinity,
+                                          //   width: double.infinity,
+                                          // ),
                                         ),
                                       ],
                                     ),
@@ -171,6 +173,34 @@ class HomeScreen extends StatelessWidget {
                       const SizedBox(height: 16),
                       Row(
                         children: [
+                          Card(
+                            child: Center(
+                              child: Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Container(
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(50.0),
+                                    color: Colors.white,
+                                    border: Border.all(
+                                      color: Colors.white, // Warna border
+                                      width: 2.0, // Lebar border
+                                    ),
+                                  ),
+                                  child: IconButton(
+                                    icon: const Icon(Icons.shopping_cart),
+                                    onPressed: () {
+                                      Navigator.of(context).push(
+                                        MaterialPageRoute(
+                                          builder: (context) =>
+                                              const HistoryScreen(),
+                                        ),
+                                      );
+                                    },
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
                           Expanded(
                             child: Container(
                               margin: EdgeInsets.all(5),
