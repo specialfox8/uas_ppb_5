@@ -1,12 +1,12 @@
 import 'package:uas_ppb_5/providers/auth_provider.dart' as auth;
 import 'package:uas_ppb_5/providers/product_provider.dart';
-import 'package:uas_ppb_5/screens/cart_screen.dart';
+import 'package:uas_ppb_5/screens/NavHome.dart';
 import 'package:uas_ppb_5/screens/login_screen.dart';
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:uas_ppb_5/screens/menu_screen.dart';
 import 'firebase_options.dart';
 
 void main() async {
@@ -43,7 +43,27 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
         useMaterial3: true,
       ),
-      home: MenuScreen(),
+      home: const AuthGuard(),
+    );
+  }
+}
+
+// ---
+
+class AuthGuard extends StatelessWidget {
+  const AuthGuard({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return StreamBuilder(
+      stream: FirebaseAuth.instance.authStateChanges(),
+      builder: (context, snapshot) {
+        if (snapshot.hasData) {
+          return const MyNavBarScreen();
+        } else {
+          return const LoginScreen();
+        }
+      },
     );
   }
 }
