@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:uas_ppb_5/providers/product_provider.dart';
 import 'package:uas_ppb_5/screens/detail_screen.dart';
+import 'package:uas_ppb_5/screens/historyscreen.dart';
+import 'package:uas_ppb_5/screens/homescreen.dart';
 import 'package:uas_ppb_5/screens/login_screen.dart';
 import 'package:uas_ppb_5/screens/cart_screen.dart';
 
@@ -89,6 +91,50 @@ class _MenuScreenState extends State<MenuScreen> {
               title: Text('Our Products'),
               leading: Icon(Icons.store_outlined),
             ),
+            ListTile(
+              title: const Text('Home'),
+              leading: const Icon(Icons.home),
+              onTap: () {
+                Navigator.of(context).pushReplacement(
+                  MaterialPageRoute(
+                    builder: (context) => const HomeScreen(),
+                  ),
+                );
+              },
+            ),
+            // ListTile(
+            //   title: const Text('Voucher'),
+            //   leading: const Icon(Icons.home),
+            //   onTap: () {
+            //     Navigator.of(context).pushReplacement(
+            //       MaterialPageRoute(
+            //         builder: (context) => const VoucherScreen(),
+            //       ),
+            //     );
+            //   },
+            // ),
+            ListTile(
+              title: const Text('History'),
+              leading: const Icon(Icons.home),
+              onTap: () {
+                Navigator.of(context).pushReplacement(
+                  MaterialPageRoute(
+                    builder: (context) => const HistoryScreen(),
+                  ),
+                );
+              },
+            ),
+            // ListTile(
+            //   title: const Text('Profile'),
+            //   leading: const Icon(Icons.home),
+            //   onTap: () {
+            //     Navigator.of(context).pushReplacement(
+            //       MaterialPageRoute(
+            //         builder: (context) => const ProfileScreen(),
+            //       ),
+            //     );
+            //   },
+            // ),
             ListTile(
               title: const Text('Logout'),
               leading: const Icon(Icons.logout_outlined),

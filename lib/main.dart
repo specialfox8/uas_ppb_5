@@ -19,7 +19,7 @@ void main() async {
   runApp(
     MultiProvider(
       providers: [
-        Provider<auth.AuthProvider>(
+        ChangeNotifierProvider<auth.AuthProvider>(
           create: (_) => auth.AuthProvider(),
         ),
         ChangeNotifierProvider<ProductProvider>(
@@ -28,6 +28,7 @@ void main() async {
       ],
       child: const MyApp(),
     ),
+
   );
 }
 
