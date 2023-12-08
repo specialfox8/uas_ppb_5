@@ -5,6 +5,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'dart:async';
 
 import 'package:uas_ppb_5/screens/historyscreen.dart';
+import 'package:uas_ppb_5/screens/menu_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -221,11 +222,20 @@ class HomeScreen extends StatelessWidget {
                             ),
                           ),
                           Expanded(
-                            child: Container(
-                              margin: EdgeInsets.all(5),
-                              width: 20,
-                              height: 70,
-                              decoration: BoxDecoration(
+                            child: InkWell(
+                              onTap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => MenuScreen(),
+                                  ),
+                                );
+                              },
+                              child: Container(
+                                margin: EdgeInsets.all(5),
+                                width: 20,
+                                height: 70,
+                                decoration: BoxDecoration(
                                   color: Colors.white,
                                   borderRadius: BorderRadius.circular(10),
                                   boxShadow: const [
@@ -235,8 +245,12 @@ class HomeScreen extends StatelessWidget {
                                       blurRadius: 10,
                                       offset: Offset(0, 3),
                                     )
-                                  ]),
-                              child: Text('Menu'),
+                                  ],
+                                ),
+                                child: Center(
+                                  child: Text('Menu'),
+                                ),
+                              ),
                             ),
                           ),
                         ],
