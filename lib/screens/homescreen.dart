@@ -5,6 +5,8 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'dart:async';
 
 import 'package:uas_ppb_5/screens/historyscreen.dart';
+import 'package:uas_ppb_5/screens/menu_screen.dart';
+import 'package:uas_ppb_5/screens/cart_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -50,11 +52,14 @@ class HomeScreen extends StatelessWidget {
                 ),
               ),
               child: IconButton(
-                icon: const Icon(Icons.shopping_cart),
-                onPressed: () {
-                  //target screen
-                },
-              ),
+              icon: const Icon(Icons.shopping_cart),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => CartScreen()),
+                );
+              },
+            ),
             ),
           ),
         ],
@@ -91,7 +96,7 @@ class HomeScreen extends StatelessWidget {
                 [
                   Column(
                     children: [
-                      const Card(
+                      Card(
                         child: Column(
                           children: [
                             AspectRatio(
@@ -100,23 +105,58 @@ class HomeScreen extends StatelessWidget {
                                 children: [
                                   Center(
                                     child: Stack(
-                                      children: [
-                                        ClipRRect(
-                                          borderRadius: BorderRadius.only(
-                                            topLeft: Radius.circular(8.0),
-                                            topRight: Radius.circular(8.0),
-                                            bottomLeft: Radius.circular(8.0),
-                                            bottomRight: Radius.circular(8.0),
+                                    children: [
+                                      Center(
+                                        child: Stack(
+                                          children: [
+                                            ClipRRect(
+                                            borderRadius: const BorderRadius.only(
+                                              topLeft: Radius.circular(8.0),
+                                              topRight: Radius.circular(8.0),
+                                              bottomLeft: Radius.circular(8.0),
+                                              bottomRight: Radius.circular(8.0),
+                                            ),
+                                            child: Container(
+                                              decoration: BoxDecoration(
+                                                borderRadius: const BorderRadius.all(Radius.circular(8.0)),
+                                                image: DecorationImage(
+                                                  image: AssetImage('assets/images/poin.png'),
+                                                  fit: BoxFit.cover,
+                                                ),
+                                              ),
+                                              width: double.infinity,
+                                              height: double.infinity,
+                                              padding: const EdgeInsets.all(16.0),
+                                              child: const Column(
+                                                crossAxisAlignment: CrossAxisAlignment.start,
+                                                mainAxisAlignment: MainAxisAlignment.center,
+                                                children: [
+                                                  Text(
+                                                    'Poin kamu 100',
+                                                    style: TextStyle(
+                                                      fontSize: 24.0,
+                                                      fontWeight: FontWeight.bold,
+                                                      color: Colors.black54,
+                                                    ),
+                                                  ),
+                                                  SizedBox(height: 8.0),
+                                                  Text(
+                                                    'Gunakan poin kamu untuk mendapatkan potongan harga!',
+                                                    style: TextStyle(
+                                                      fontSize: 14.0,
+                                                      color: Colors.black54,
+                                                    ),
+                                                  ),
+                                                ],
+                                              ),
+                                            ),
                                           ),
-                                          // child: Image.asset(
-                                          //   'assets/images/1.jpg',
-                                          //   fit: BoxFit.cover,
-                                          //   height: double.infinity,
-                                          //   width: double.infinity,
-                                          // ),
+                                          ],
                                         ),
-                                      ],
-                                    ),
+                                      ),
+                                    ],
+                                  ),
+
                                   ),
                                 ],
                               ),
@@ -173,70 +213,82 @@ class HomeScreen extends StatelessWidget {
                       const SizedBox(height: 16),
                       Row(
                         children: [
-                          Card(
-                            child: Center(
-                              child: Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: Container(
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(50.0),
-                                    color: Colors.white,
-                                    border: Border.all(
-                                      color: Colors.white, // Warna border
-                                      width: 2.0, // Lebar border
+                          Expanded(
+                            child: InkWell(
+                              onTap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => const MenuScreen(),
+                                  ),
+                                );
+                              },
+                              child: Container(
+                                margin: const EdgeInsets.all(5),
+                                width: 20,
+                                height: 70,
+                                decoration: BoxDecoration(
+                                  color: Color.fromARGB(245, 235, 234, 228),
+                                  borderRadius: BorderRadius.circular(10),
+                                  boxShadow: const [
+                                    BoxShadow(
+                                      color: Color.fromARGB(255, 215, 215, 215),
+                                      spreadRadius: 3,
+                                      blurRadius: 10,
+                                      offset: Offset(0, 3),
+                                    )
+                                  ],
+                                ),
+                                child: const Center(
+                                  child: Text(
+                                    'Pick Up',
+                                    style: TextStyle(
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.bold,
+                                      color: Colors.black54,
                                     ),
-                                  ),
-                                  child: IconButton(
-                                    icon: const Icon(Icons.shopping_cart),
-                                    onPressed: () {
-                                      Navigator.of(context).push(
-                                        MaterialPageRoute(
-                                          builder: (context) =>
-                                              const HistoryScreen(),
-                                        ),
-                                      );
-                                    },
-                                  ),
+                                    ),
                                 ),
                               ),
                             ),
                           ),
                           Expanded(
-                            child: Container(
-                              margin: EdgeInsets.all(5),
-                              width: 20,
-                              height: 70,
-                              decoration: BoxDecoration(
-                                  color: Colors.white,
+                            child: InkWell(
+                              onTap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => const MenuScreen(),
+                                  ),
+                                );
+                              },
+                              child: Container(
+                                margin: const EdgeInsets.all(5),
+                                width: 20,
+                                height: 70,
+                                decoration: BoxDecoration(
+                                  color: const Color.fromRGBO(211, 205, 172, 0.961),
                                   borderRadius: BorderRadius.circular(10),
                                   boxShadow: const [
                                     BoxShadow(
-                                      color: Colors.grey,
+                                      color: Color.fromARGB(255, 215, 215, 215),
                                       spreadRadius: 3,
                                       blurRadius: 10,
                                       offset: Offset(0, 3),
                                     )
-                                  ]),
-                              child: Text('Pick Up'),
-                            ),
-                          ),
-                          Expanded(
-                            child: Container(
-                              margin: EdgeInsets.all(5),
-                              width: 20,
-                              height: 70,
-                              decoration: BoxDecoration(
-                                  color: Colors.white,
-                                  borderRadius: BorderRadius.circular(10),
-                                  boxShadow: const [
-                                    BoxShadow(
-                                      color: Colors.grey,
-                                      spreadRadius: 3,
-                                      blurRadius: 10,
-                                      offset: Offset(0, 3),
-                                    )
-                                  ]),
-                              child: Text('Menu'),
+                                  ],
+                                ),
+                                child: const Center(
+                                  child: Text(
+                                    'Menu',
+                                    style: TextStyle(
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.bold,
+                                      color: Colors.black54,
+                                    ),
+                                    ),
+                                ),
+                              ),
                             ),
                           ),
                         ],
@@ -271,9 +323,9 @@ class _SliderImageState extends State<SliderImage> {
   int _currentIndex = 0;
   Timer? _timer;
   final List<String> images = [
-    'assets/images/1.jpg',
-    'assets/images/2.jpg',
-    'assets/images/3.jpg',
+    'assets/images/promo1.png',
+    'assets/images/promo2.png',
+    'assets/images/promo1.png',
     // Add more images as needed
   ];
 

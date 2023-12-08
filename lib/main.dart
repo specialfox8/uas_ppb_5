@@ -1,4 +1,5 @@
 import 'package:uas_ppb_5/providers/auth_provider.dart' as auth;
+import 'package:uas_ppb_5/providers/product_provider.dart';
 import 'package:uas_ppb_5/screens/NavHome.dart';
 import 'package:uas_ppb_5/screens/login_screen.dart';
 
@@ -18,12 +19,16 @@ void main() async {
   runApp(
     MultiProvider(
       providers: [
-        Provider<auth.AuthProvider>(
+        ChangeNotifierProvider<auth.AuthProvider>(
           create: (_) => auth.AuthProvider(),
+        ),
+        ChangeNotifierProvider<ProductProvider>(
+          create: (_) => ProductProvider(),
         ),
       ],
       child: const MyApp(),
     ),
+
   );
 }
 
