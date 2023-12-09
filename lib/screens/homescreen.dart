@@ -52,14 +52,14 @@ class HomeScreen extends StatelessWidget {
                 ),
               ),
               child: IconButton(
-              icon: const Icon(Icons.shopping_cart),
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => CartScreen()),
-                );
-              },
-            ),
+                icon: const Icon(Icons.shopping_cart),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => CartScreen()),
+                  );
+                },
+              ),
             ),
           ),
         ],
@@ -95,6 +95,7 @@ class HomeScreen extends StatelessWidget {
               delegate: SliverChildListDelegate(
                 [
                   Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Card(
                         child: Column(
@@ -105,58 +106,71 @@ class HomeScreen extends StatelessWidget {
                                 children: [
                                   Center(
                                     child: Stack(
-                                    children: [
-                                      Center(
-                                        child: Stack(
-                                          children: [
-                                            ClipRRect(
-                                            borderRadius: const BorderRadius.only(
-                                              topLeft: Radius.circular(8.0),
-                                              topRight: Radius.circular(8.0),
-                                              bottomLeft: Radius.circular(8.0),
-                                              bottomRight: Radius.circular(8.0),
-                                            ),
-                                            child: Container(
-                                              decoration: BoxDecoration(
-                                                borderRadius: const BorderRadius.all(Radius.circular(8.0)),
-                                                image: DecorationImage(
-                                                  image: AssetImage('assets/images/poin.png'),
-                                                  fit: BoxFit.cover,
+                                      children: [
+                                        Center(
+                                          child: Stack(
+                                            children: [
+                                              ClipRRect(
+                                                borderRadius:
+                                                    const BorderRadius.only(
+                                                  topLeft: Radius.circular(8.0),
+                                                  topRight:
+                                                      Radius.circular(8.0),
+                                                  bottomLeft:
+                                                      Radius.circular(8.0),
+                                                  bottomRight:
+                                                      Radius.circular(8.0),
+                                                ),
+                                                child: Container(
+                                                  decoration: BoxDecoration(
+                                                    borderRadius:
+                                                        const BorderRadius.all(
+                                                            Radius.circular(
+                                                                8.0)),
+                                                    image: DecorationImage(
+                                                      image: AssetImage(
+                                                          'assets/images/poin.png'),
+                                                      fit: BoxFit.cover,
+                                                    ),
+                                                  ),
+                                                  width: double.infinity,
+                                                  height: double.infinity,
+                                                  padding: const EdgeInsets.all(
+                                                      16.0),
+                                                  child: const Column(
+                                                    crossAxisAlignment:
+                                                        CrossAxisAlignment
+                                                            .start,
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment
+                                                            .center,
+                                                    children: [
+                                                      Text(
+                                                        'Poin kamu 100',
+                                                        style: TextStyle(
+                                                          fontSize: 24.0,
+                                                          fontWeight:
+                                                              FontWeight.bold,
+                                                          color: Colors.black54,
+                                                        ),
+                                                      ),
+                                                      SizedBox(height: 8.0),
+                                                      Text(
+                                                        'Gunakan poin kamu untuk mendapatkan potongan harga!',
+                                                        style: TextStyle(
+                                                          fontSize: 14.0,
+                                                          color: Colors.black54,
+                                                        ),
+                                                      ),
+                                                    ],
+                                                  ),
                                                 ),
                                               ),
-                                              width: double.infinity,
-                                              height: double.infinity,
-                                              padding: const EdgeInsets.all(16.0),
-                                              child: const Column(
-                                                crossAxisAlignment: CrossAxisAlignment.start,
-                                                mainAxisAlignment: MainAxisAlignment.center,
-                                                children: [
-                                                  Text(
-                                                    'Poin kamu 100',
-                                                    style: TextStyle(
-                                                      fontSize: 24.0,
-                                                      fontWeight: FontWeight.bold,
-                                                      color: Colors.black54,
-                                                    ),
-                                                  ),
-                                                  SizedBox(height: 8.0),
-                                                  Text(
-                                                    'Gunakan poin kamu untuk mendapatkan potongan harga!',
-                                                    style: TextStyle(
-                                                      fontSize: 14.0,
-                                                      color: Colors.black54,
-                                                    ),
-                                                  ),
-                                                ],
-                                              ),
-                                            ),
+                                            ],
                                           ),
-                                          ],
                                         ),
-                                      ),
-                                    ],
-                                  ),
-
+                                      ],
+                                    ),
                                   ),
                                 ],
                               ),
@@ -247,7 +261,7 @@ class HomeScreen extends StatelessWidget {
                                       fontWeight: FontWeight.bold,
                                       color: Colors.black54,
                                     ),
-                                    ),
+                                  ),
                                 ),
                               ),
                             ),
@@ -267,7 +281,8 @@ class HomeScreen extends StatelessWidget {
                                 width: 20,
                                 height: 70,
                                 decoration: BoxDecoration(
-                                  color: const Color.fromRGBO(211, 205, 172, 0.961),
+                                  color: const Color.fromRGBO(
+                                      211, 205, 172, 0.961),
                                   borderRadius: BorderRadius.circular(10),
                                   boxShadow: const [
                                     BoxShadow(
@@ -286,7 +301,7 @@ class HomeScreen extends StatelessWidget {
                                       fontWeight: FontWeight.bold,
                                       color: Colors.black54,
                                     ),
-                                    ),
+                                  ),
                                 ),
                               ),
                             ),
@@ -295,10 +310,71 @@ class HomeScreen extends StatelessWidget {
                       ),
                       const SizedBox(height: 16),
                       //image slider
-
-                      const Text('Customer Service'),
-                      const SizedBox(height: 16),
-                      const Text('wadawdawdwad'),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            'Customer Service :',
+                            style: TextStyle(
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          SizedBox(height: 16),
+                          Row(
+                            children: [
+                              Icon(
+                                Icons.call,
+                              ),
+                              SizedBox(
+                                  width: 10.0), // Spasi antara ikon dan teks
+                              Text(
+                                '022-2315467575',
+                                style: TextStyle(fontSize: 15),
+                              ),
+                            ],
+                          ),
+                          Row(
+                            children: [
+                              Icon(
+                                Icons.phone_android,
+                              ),
+                              SizedBox(
+                                  width: 10.0), // Spasi antara ikon dan teks
+                              Text(
+                                '0812-233-8667',
+                                style: TextStyle(fontSize: 15),
+                              ),
+                            ],
+                          ),
+                          Row(
+                            children: [
+                              Icon(
+                                Icons.mail,
+                              ),
+                              SizedBox(
+                                  width: 10.0), // Spasi antara ikon dan teks
+                              Text(
+                                'glukglek@gmail.com',
+                                style: TextStyle(fontSize: 15),
+                              ),
+                            ],
+                          ),
+                          Row(
+                            children: [
+                              Icon(
+                                Icons.web,
+                              ),
+                              SizedBox(
+                                  width: 10.0), // Spasi antara ikon dan teks
+                              Text(
+                                'glukglek.com',
+                                style: TextStyle(fontSize: 15),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
                     ],
                   ),
                 ],
