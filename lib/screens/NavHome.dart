@@ -3,6 +3,8 @@ import 'package:uas_ppb_5/screens/historyscreen.dart';
 import 'package:uas_ppb_5/screens/homescreen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:uas_ppb_5/screens/voucher_screen.dart';
+import 'package:uas_ppb_5/screens/profile_screen.dart';
 
 class MyNavBarScreen extends StatefulWidget {
   const MyNavBarScreen({super.key});
@@ -15,9 +17,9 @@ class _MyNavBarScreenState extends State<MyNavBarScreen> {
   int _selectedIndex = 0;
   static const List<Widget> _widgetOptions = <Widget>[
     HomeScreen(), //Homescreen
-    HomeScreen(), //VoucherScreen
+    VoucherScreen(), //VoucherScreen
     HistoryScreen(), //HistoryScreen
-    HistoryScreen(), //ProfilScreen
+    ProfileScreen(), //ProfilScreen
   ];
 
   void _onItemTap(int index) {
