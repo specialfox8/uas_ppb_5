@@ -1,8 +1,18 @@
 import 'package:uas_ppb_5/providers/auth_provider.dart';
+import 'package:uas_ppb_5/screens/cart_screen.dart';
 import 'package:uas_ppb_5/screens/historyscreen.dart';
 import 'package:uas_ppb_5/screens/homescreen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+
+class BarScreen extends StatelessWidget {
+  const BarScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MyNavBarScreen();
+  }
+}
 
 class MyNavBarScreen extends StatefulWidget {
   const MyNavBarScreen({super.key});
@@ -16,7 +26,7 @@ class _MyNavBarScreenState extends State<MyNavBarScreen> {
   static const List<Widget> _widgetOptions = <Widget>[
     HomeScreen(), //Homescreen
     HomeScreen(), //VoucherScreen
-    HistoryScreen(), //HistoryScreen
+    CartScreen(), //HistoryScreen
     HistoryScreen(), //ProfilScreen
   ];
 
@@ -43,8 +53,8 @@ class _MyNavBarScreenState extends State<MyNavBarScreen> {
             label: 'Voucher',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.history),
-            label: 'History',
+            icon: Icon(Icons.shopping_cart),
+            label: 'Cart',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.person_outline),

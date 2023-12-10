@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:uas_ppb_5/providers/product_provider.dart';
+import 'package:uas_ppb_5/screens/NavHome.dart';
 import 'package:uas_ppb_5/screens/detail_screen.dart';
 import 'package:uas_ppb_5/screens/historyscreen.dart';
 import 'package:uas_ppb_5/screens/homescreen.dart';
@@ -25,10 +26,11 @@ class _MenuScreenState extends State<MenuScreen> {
 
     // Set filter produk dengan kategori 'all' secara default
     Future.delayed(Duration.zero, () {
-      Provider.of<ProductProvider>(context, listen: false).filterProductsByCategory('all');
+      Provider.of<ProductProvider>(context, listen: false)
+          .filterProductsByCategory('all');
     });
   }
-  
+
   @override
   Widget build(BuildContext context) {
     var products = Provider.of<ProductProvider>(context).filteredProducts;
@@ -97,7 +99,7 @@ class _MenuScreenState extends State<MenuScreen> {
               onTap: () {
                 Navigator.of(context).pushReplacement(
                   MaterialPageRoute(
-                    builder: (context) => const HomeScreen(),
+                    builder: (context) => const BarScreen(),
                   ),
                 );
               },
@@ -172,19 +174,22 @@ class _MenuScreenState extends State<MenuScreen> {
                 children: [
                   ElevatedButton(
                     onPressed: () {
-                      Provider.of<ProductProvider>(context, listen: false).filterProductsByCategory('coffee');
+                      Provider.of<ProductProvider>(context, listen: false)
+                          .filterProductsByCategory('coffee');
                     },
                     child: Text('Coffee'),
                   ),
                   ElevatedButton(
                     onPressed: () {
-                      Provider.of<ProductProvider>(context, listen: false).filterProductsByCategory('non coffee');
+                      Provider.of<ProductProvider>(context, listen: false)
+                          .filterProductsByCategory('non coffee');
                     },
                     child: Text('Non Coffee'),
                   ),
                   ElevatedButton(
                     onPressed: () {
-                      Provider.of<ProductProvider>(context, listen: false).filterProductsByCategory('all');
+                      Provider.of<ProductProvider>(context, listen: false)
+                          .filterProductsByCategory('all');
                     },
                     child: Text('All'),
                   ),
@@ -225,8 +230,9 @@ class _MenuScreenState extends State<MenuScreen> {
                                     child: Image.asset(
                                       products[index].imagePath,
                                       fit: BoxFit.cover,
-                                      height: double.infinity, // Atur tinggi gambar menjadi infinity
-                                      width: double.infinity, 
+                                      height: double
+                                          .infinity, // Atur tinggi gambar menjadi infinity
+                                      width: double.infinity,
                                     ),
                                   ),
                                 ],
