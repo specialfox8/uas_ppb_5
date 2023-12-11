@@ -119,7 +119,7 @@ void filterProductsByCategory(String category) {
   }
 
   notifyListeners();
-}
+  }
 
   int getQuantity(String productId) {
     return _cartProducts
@@ -149,7 +149,7 @@ void decrementQuantity(String productId) {
   }
 
   notifyListeners();
-}
+  }
 
   void addToCart(Product product) {
   int index = _cartProducts.indexWhere((cartProduct) => cartProduct.id == product.id);
