@@ -4,13 +4,14 @@ import 'package:provider/provider.dart';
 import 'package:uas_ppb_5/providers/product_provider.dart';
 import 'package:uas_ppb_5/screens/NavHome.dart';
 import 'package:uas_ppb_5/screens/detail_screen.dart';
-import 'package:uas_ppb_5/screens/historyscreen.dart';
-import 'package:uas_ppb_5/screens/homescreen.dart';
+import 'package:uas_ppb_5/screens/voucher_screen.dart';
+import 'package:uas_ppb_5/screens/profile_screen.dart';
 import 'package:uas_ppb_5/screens/login_screen.dart';
 import 'package:uas_ppb_5/screens/cart_screen.dart';
 
 class MenuScreen extends StatefulWidget {
   const MenuScreen({Key? key}) : super(key: key);
+  
 
   @override
   State<MenuScreen> createState() => _MenuScreenState();
@@ -24,7 +25,6 @@ class _MenuScreenState extends State<MenuScreen> {
   void initState() {
     super.initState();
 
-    // Set filter produk dengan kategori 'all' secara default
     Future.delayed(Duration.zero, () {
       Provider.of<ProductProvider>(context, listen: false)
           .filterProductsByCategory('all');
@@ -36,6 +36,7 @@ class _MenuScreenState extends State<MenuScreen> {
     var products = Provider.of<ProductProvider>(context).filteredProducts;
 
     return Scaffold(
+      
       appBar: AppBar(
         leading: Builder(
           builder: (context) => IconButton(
@@ -73,7 +74,6 @@ class _MenuScreenState extends State<MenuScreen> {
                   const Text(
                     'GlukGlek!',
                     style: TextStyle(
-                      fontFamily: 'Poppins',
                       fontWeight: FontWeight.bold,
                       fontSize: 24,
                     ),
@@ -104,39 +104,39 @@ class _MenuScreenState extends State<MenuScreen> {
                 );
               },
             ),
-            // ListTile(
-            //   title: const Text('Voucher'),
-            //   leading: const Icon(Icons.home),
-            //   onTap: () {
-            //     Navigator.of(context).pushReplacement(
-            //       MaterialPageRoute(
-            //         builder: (context) => const VoucherScreen(),
-            //       ),
-            //     );
-            //   },
-            // ),
             ListTile(
-              title: const Text('History'),
-              leading: const Icon(Icons.home),
+              title: const Text('Voucher'),
+              leading: const Icon(Icons.confirmation_num),
               onTap: () {
                 Navigator.of(context).pushReplacement(
                   MaterialPageRoute(
-                    builder: (context) => const HistoryScreen(),
+                    builder: (context) => const VoucherScreen(),
                   ),
                 );
               },
             ),
             // ListTile(
-            //   title: const Text('Profile'),
+            //   title: const Text('History'),
             //   leading: const Icon(Icons.home),
             //   onTap: () {
             //     Navigator.of(context).pushReplacement(
             //       MaterialPageRoute(
-            //         builder: (context) => const ProfileScreen(),
+            //         builder: (context) => const HistoryScreen(),
             //       ),
             //     );
             //   },
             // ),
+            ListTile(
+              title: const Text('Profile'),
+              leading: const Icon(Icons.person_outline),
+              onTap: () {
+                Navigator.of(context).pushReplacement(
+                  MaterialPageRoute(
+                    builder: (context) => const ProfileScreen(),
+                  ),
+                );
+              },
+            ),
             ListTile(
               title: const Text('Logout'),
               leading: const Icon(Icons.logout_outlined),
@@ -167,7 +167,6 @@ class _MenuScreenState extends State<MenuScreen> {
                 ),
               ),
             ),
-            // Tambahkan widget untuk menampilkan tombol kategori di sini
             SliverToBoxAdapter(
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -207,7 +206,6 @@ class _MenuScreenState extends State<MenuScreen> {
                     padding: const EdgeInsets.all(2.0),
                     child: InkWell(
                       onTap: () {
-                        // Navigate
                         Navigator.of(context).push(
                           MaterialPageRoute(
                             builder: (context) =>
@@ -231,7 +229,7 @@ class _MenuScreenState extends State<MenuScreen> {
                                       products[index].imagePath,
                                       fit: BoxFit.cover,
                                       height: double
-                                          .infinity, // Atur tinggi gambar menjadi infinity
+                                          .infinity,
                                       width: double.infinity,
                                     ),
                                   ),

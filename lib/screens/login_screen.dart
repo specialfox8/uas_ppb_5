@@ -63,10 +63,10 @@ class _LoginScreenState extends State<LoginScreen> {
                       children: [
                         // Your image widget goes here
                         Image.asset(
-                        'assets/images/logo_glukglek-removebg.png', // Gantilah dengan path gambar yang sesuai
-                        width: 150.0, // Sesuaikan lebar gambar sesuai kebutuhan
-                        height: 150.0, // Sesuaikan tinggi gambar sesuai kebutuhan
-                        fit: BoxFit.contain, // Sesuaikan properti fit sesuai kebutuhan (contoh: cover, contain, dll.)
+                        'assets/images/logo_glukglek-removebg.png',
+                        width: 150.0,
+                        height: 150.0,
+                        fit: BoxFit.contain,
                       ),
                       ],
                     ),

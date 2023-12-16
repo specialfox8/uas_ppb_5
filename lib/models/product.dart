@@ -8,7 +8,6 @@ class Product {
    String category;
    int quantity;
 
-  // Konstruktor untuk membuat produk baru dengan ID unik
   Product({
     String? id, 
     required this.nama,
@@ -19,7 +18,6 @@ class Product {
     this.quantity = 0,
   }) : id = id ?? generateUniqueId();
 
-  // Metode pembuat salinan objek dengan pembaruan opsional
   Product copyWith({
     String? id,
     String? nama,
@@ -40,7 +38,6 @@ class Product {
     );
   }
 
-  // Metode pembuat produk baru dengan ID unik
   static Product createNew({
     required String nama,
     required int harga,

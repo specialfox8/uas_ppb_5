@@ -19,7 +19,7 @@ class ProfileScreen extends StatelessWidget {
         child: Stack(
           children: [
             Container(
-              height: MediaQuery.of(context).size.height / 5, // Set tinggi Card
+              height: MediaQuery.of(context).size.height / 5,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10.0),
               ),
@@ -104,7 +104,7 @@ class ProfileScreen extends StatelessWidget {
         child: Stack(
           children: [
             Container(
-              height: MediaQuery.of(context).size.height / 5, // Set tinggi Card
+              height: MediaQuery.of(context).size.height / 5,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10.0),
               ),
@@ -229,7 +229,7 @@ class ProfileScreen extends StatelessWidget {
                   ),
                 ],
               ),
-              SizedBox(height: 10), // Atur jarak sesuai kebutuhan Anda
+              SizedBox(height: 10),
               Text(
                 '${user?.email}',
                 style: TextStyle(
