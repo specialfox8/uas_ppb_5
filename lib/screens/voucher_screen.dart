@@ -17,7 +17,7 @@ class VoucherScreen extends StatelessWidget {
         child: Stack(
           children: [
             Container(
-              height: MediaQuery.of(context).size.height / 7, // Set tinggi Card
+              height: MediaQuery.of(context).size.height / 7,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10.0),
               ),
@@ -30,7 +30,7 @@ class VoucherScreen extends StatelessWidget {
                   children: [
                     Text(
                       'VOUCHER CASHBACK 10%',
-                      textAlign: TextAlign.end,
+                      textAlign: TextAlign.start,
                       style: TextStyle(
                         fontWeight: FontWeight.w900,
                         fontFamily: 'BebasNeue',
@@ -95,7 +95,7 @@ class VoucherScreen extends StatelessWidget {
         child: Stack(
           children: [
             Container(
-              height: MediaQuery.of(context).size.height / 7, // Set tinggi Card
+              height: MediaQuery.of(context).size.height / 7,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10.0),
               ),
@@ -173,7 +173,7 @@ class VoucherScreen extends StatelessWidget {
         child: Stack(
           children: [
             Container(
-              height: MediaQuery.of(context).size.height / 7, // Set tinggi Card
+              height: MediaQuery.of(context).size.height / 7,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10.0),
               ),
@@ -251,7 +251,7 @@ class VoucherScreen extends StatelessWidget {
         child: Stack(
           children: [
             Container(
-              height: MediaQuery.of(context).size.height / 7, // Set tinggi Card
+              height: MediaQuery.of(context).size.height / 7,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10.0),
               ),
@@ -329,7 +329,7 @@ class VoucherScreen extends StatelessWidget {
         child: Stack(
           children: [
             Container(
-              height: MediaQuery.of(context).size.height / 7, // Set tinggi Card
+              height: MediaQuery.of(context).size.height / 7,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10.0),
               ),

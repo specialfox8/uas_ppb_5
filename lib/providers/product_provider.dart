@@ -158,7 +158,6 @@ void decrementQuantity(String productId) {
     _cartProducts.removeAt(index);
   }
 
-  // Add the product back to the cart with quantity 1
   _cartProducts.add(product.copyWith(quantity: 1));
 
   notifyListeners();

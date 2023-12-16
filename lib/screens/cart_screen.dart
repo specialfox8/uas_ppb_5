@@ -243,13 +243,11 @@ class _CartScreenState extends State<CartScreen> {
                 ),
               ),
               const SizedBox(height: 16),
-              // Tombol "View History" di luar card
               Row(
                 children: [
                   Expanded(
                     child: ElevatedButton(
                       onPressed: () {
-                        // Kirim data ke halaman berikutnya
                         Navigator.of(context).push(
                           MaterialPageRoute(
                             builder: (context) => HistoryScreen(
@@ -335,7 +333,6 @@ class _CartScreenState extends State<CartScreen> {
                 ),
               const SizedBox(height: 16),
 
-              // Menampilkan komentar jika ada
               if (comment.isNotEmpty)
                 ListTile(
                   title: const Text('Comment'),
@@ -362,7 +359,6 @@ class _CartScreenState extends State<CartScreen> {
               onPressed: () {
                 Navigator.of(context).pop();
 
-                // Kirim data ke halaman berikutnya
                 Navigator.of(context).push(
                   MaterialPageRoute(
                     builder: (context) => HistoryScreen(

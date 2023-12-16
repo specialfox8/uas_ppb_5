@@ -47,8 +47,8 @@ class HomeScreen extends StatelessWidget {
                 borderRadius: BorderRadius.circular(50.0),
                 color: Colors.white,
                 border: Border.all(
-                  color: Colors.white, // Warna border
-                  width: 2.0, // Lebar border
+                  color: Colors.white,
+                  width: 2.0,
                 ),
               ),
               child: IconButton(
@@ -65,7 +65,7 @@ class HomeScreen extends StatelessWidget {
         ],
         backgroundColor: const Color.fromRGBO(167, 211, 151, 1.000),
         toolbarHeight: MediaQuery.of(context).size.height *
-            0.1, // Sesuaikan proporsi yang diinginkan
+            0.1,
       ),
       drawer: Drawer(
         child: ListView(
@@ -327,7 +327,7 @@ class HomeScreen extends StatelessWidget {
                                 Icons.call,
                               ),
                               SizedBox(
-                                  width: 10.0), // Spasi antara ikon dan teks
+                                  width: 10.0),
                               Text(
                                 '022-2315467575',
                                 style: TextStyle(fontSize: 15),
@@ -340,7 +340,7 @@ class HomeScreen extends StatelessWidget {
                                 Icons.phone_android,
                               ),
                               SizedBox(
-                                  width: 10.0), // Spasi antara ikon dan teks
+                                  width: 10.0),
                               Text(
                                 '0812-233-8667',
                                 style: TextStyle(fontSize: 15),
@@ -353,7 +353,7 @@ class HomeScreen extends StatelessWidget {
                                 Icons.mail,
                               ),
                               SizedBox(
-                                  width: 10.0), // Spasi antara ikon dan teks
+                                  width: 10.0),
                               Text(
                                 'glukglek@gmail.com',
                                 style: TextStyle(fontSize: 15),
@@ -366,7 +366,7 @@ class HomeScreen extends StatelessWidget {
                                 Icons.web,
                               ),
                               SizedBox(
-                                  width: 10.0), // Spasi antara ikon dan teks
+                                  width: 10.0),
                               Text(
                                 'glukglek.com',
                                 style: TextStyle(fontSize: 15),
@@ -412,7 +412,7 @@ class _SliderImageState extends State<SliderImage> {
   }
 
   void _startSliderTimer() {
-    const Duration duration = Duration(seconds: 3); // Ganti sesuai kebutuhan
+    const Duration duration = Duration(seconds: 3);
     _timer = Timer.periodic(duration, (timer) {
       if (_currentIndex < images.length - 1) {
         _currentIndex++;
@@ -459,7 +459,7 @@ class _SliderImageState extends State<SliderImage> {
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: List.generate(
-            images.length, // Change this to the number of images you have
+            images.length,
             (index) {
               return Padding(
                 padding: const EdgeInsets.all(8.0),

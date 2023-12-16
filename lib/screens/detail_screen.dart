@@ -94,7 +94,6 @@ class _DetailScreenState extends State<DetailScreen> {
                           duration: Duration(seconds: 2),
                         ),
                       );
-                      // Close the DetailScreen and return the quantity as a result
                       Navigator.pop(context, quantity);
                     },
                     style: ButtonStyle(
